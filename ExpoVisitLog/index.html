@@ -50,13 +50,38 @@
       margin-top: 40px;
       padding-bottom: 20px;
     }
+    .speech-bubble {
+  position: relative;
+  background: #f0f8ff;
+  border: 2px solid #007aff;
+  border-radius: 15px;
+  padding: 12px 18px;
+  width: fit-content;
+  margin: 0 auto 20px;
+  font-weight: bold;
+  font-size: 1em;
+  color: #333;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -10px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #007aff;
+}
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>万博訪問ログアプリ 関連ドキュメント</h1>
-    <h2>Expo Visit Log App legal documents</h2>
-
+    <h1>万博訪問ログアプリ（Expo Visit Log App）</h1>
+    <br>
+    <div class="speech-bubble">１回だけなんて、もったいないよ。<br>何度も訪れて新たな驚きを発見しよう！<br>みんなで万博を盛り上げてね！！</div>
+    <img src="ExpoLogView.png" alt="Expo Log Mascot" width="300" height="300" style="display: block; margin: 1em auto;">
     <h2>日本語</h2>
     <ul>
       <li><a href="terms_ja.html">利用規約（日本語）</a></li>
@@ -68,13 +93,16 @@
       <li><a href="terms_en.html">Terms of Service (English)</a></li>
       <li><a href="privacy_en.html">Privacy Policy (English)</a></li>
     </ul>
+
+    <br>
+    <br>
   </div>
 
-  <div class="timestamp">
+  <!-- <div class="timestamp">
     ページ読み込み日時：<br>
     <strong id="now"></strong>
     <div id="availability" class="availability"></div>
-  </div>
+  </div> -->
   
   <script>
     const now = new Date();
@@ -88,7 +116,7 @@
     const rand = Math.random();
     console.log('Random value:', rand);
     if (rand < 0.1) {
-      document.getElementById('availability').textContent = '直近の予約可能時間';
+      // document.getElementById('availability').textContent = '直近の予約可能時間';
     }
   </script>
 </body>
